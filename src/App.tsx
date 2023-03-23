@@ -14,7 +14,9 @@ const App = () => {
     <div>
       <NavBar />
       <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-      <Alerts />
+      <Alerts>
+        Hello World <span>its me</span>
+      </Alerts>
     </div>
   )
 }

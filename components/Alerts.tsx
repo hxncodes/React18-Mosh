@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-const Alerts = () => {
+interface Props {
+  children: ReactNode;
+
+}
+const Alerts = ({ children }: Props) => {
   return (
-    <div><div className="alert alert-primary" role="alert">
-      A simple primary alert—check it out!
+    <div className="alert alert-primary" role="alert">
+      {children}
     </div>
-      <button type="button" className="btn btn-primary">Primary</button></div>
   )
 }
 
