@@ -1,23 +1,29 @@
 import './App.css'
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
 import ListGroup from '../components/ListGroup'
 import Alerts from '../components/Alerts'
-
+import Button from '../components/Button'
 const App = () => {
+
   let items = ['New York', 'San Fransicso', 'Tokyo', 'London', 'Paris']
   const handleSelectItem = (item: String) => {
     console.log(item);
-
   }
+
+  const [alertVisibility, setAlertVisibility] = useState(false)
   return (
     <div>
       <NavBar />
-      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-      <Alerts>
+
+      {alertVisibility && <Alerts onClose={() => setAlertVisibility(false)}>
         Hello World <span>its me</span>
-      </Alerts>
-    </div>
+      </Alerts>}
+
+      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
+
+      <Button color="warning" onClick={() => setAlertVisibility(true)}>Get Alerts</Button>
+    </div >
   )
 }
 
