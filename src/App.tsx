@@ -17,7 +17,7 @@ const App = () => {
       <NavBar />
 
       {alertVisibility && <Alerts onClose={() => setAlertVisibility(false)}>
-        Hello World <span>its me</span>
+        hxn <span>Codes</span>
       </Alerts>}
 
       <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
