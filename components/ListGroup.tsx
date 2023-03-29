@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Like from './Like';
 
 interface Props {
     items: String[];
@@ -26,6 +27,7 @@ const ListGroup = ({ items, heading, onSelectItem }: Props) => {
                         }}
                     >
                         {item}
+                        <Like />
                     </li>
                 ))}
             </ul >
