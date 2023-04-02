@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import ListGroup from "../components/ListGroup";
@@ -6,6 +6,7 @@ import Alerts from "../components/Alerts";
 import Button from "../components/Button";
 import Btn from "../components/Btn";
 import ExpandableComponent from "../components/ExpandableComponent";
+import MyForm from "../forms/MyForm";
 
 const App = () => {
   let items = ["New York", "San Fransicso", "Tokyo", "London", "Paris"];
@@ -50,6 +51,7 @@ const App = () => {
       <Btn color="danger" onBtnClick={() => setAlertVisibility(true)}>
         Child
       </Btn>
+      <MyForm />
     </div>
   );
 };
