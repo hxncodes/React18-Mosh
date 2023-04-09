@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div>
       <NavBar />
-
+      <NavBar />
       {alertVisibility && (
         <Alerts onClose={() => setAlertVisibility(false)}>
           This is Alert message..!
