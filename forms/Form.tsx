@@ -5,7 +5,7 @@ interface FormData {
   age: number;
 }
 
-const FormStateHook = () => {
+const Form = () => {
   const {
     register,
     handleSubmit,
@@ -51,4 +51,4 @@ const FormStateHook = () => {
   );
 };
 
-export default FormStateHook;
+export default Form;

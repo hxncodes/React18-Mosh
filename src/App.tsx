@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import Btn from "../components/Btn";
 import ExpandableComponent from "../components/ExpandableComponent";
 import MyForm from "../forms/MyForm";
-import FormStateHook from '../forms/FormStateHook'
+import Form from "../forms/Form";
 
 const App = () => {
   let items = ["New York", "San Fransicso", "Tokyo", "London", "Paris"];
@@ -53,7 +53,7 @@ const App = () => {
         Child
       </Btn>
       <MyForm />
-      <FormStateHook />
+      <Form />
     </div>
   );
 };
