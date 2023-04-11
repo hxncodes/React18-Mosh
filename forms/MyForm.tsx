@@ -20,6 +20,7 @@ const MyForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Form Submitting through useRef Hook</h3>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
