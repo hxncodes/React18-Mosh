@@ -6,8 +6,9 @@ import Alerts from "../components/Alerts";
 import Button from "../components/Button";
 import Btn from "../components/Btn";
 import ExpandableComponent from "../components/ExpandableComponent";
-import MyForm from "../forms/MyForm";
-import Form from "../forms/Form";
+import MyForm from "./forms/MyForm";
+import Form from "./forms/Form";
+import ExpenseApp from "./expense-tracker/ExpenseApp";
 
 const App = () => {
   let items = ["New York", "San Fransicso", "Tokyo", "London", "Paris"];
@@ -52,8 +53,9 @@ const App = () => {
       <Btn color="danger" onBtnClick={() => setAlertVisibility(true)}>
         Child
       </Btn>
-      <MyForm />
-      <Form />
+      {/* <MyForm /> */}
+      {/* <Form /> */}
+      <ExpenseApp />
     </div>
   );
 };
