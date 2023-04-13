@@ -1,5 +1,5 @@
 import { FieldValues, useForm } from "react-hook-form";
-import { z } from "zod";
+import { z } from "Zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import categories from "./categories";
 
