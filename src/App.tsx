@@ -9,7 +9,9 @@ import ExpandableComponent from "../components/ExpandableComponent";
 import MyForm from "./forms/MyForm";
 import Form from "./forms/Form";
 import ExpenseApp from "./expense-tracker/ExpenseApp";
-import UseEffectApp from "./UseEffect/UseEffectApp";
+import UseEffectApp from "./useEffect/UseEffectApp";
+import axios from "axios";
+import AxiosApp from "./axios/AxiosApp";
 
 const App = () => {
   let items = ["New York", "San Fransicso", "Tokyo", "London", "Paris"];
@@ -57,7 +59,8 @@ const App = () => {
       {/* <MyForm /> */}
       {/* <Form /> */}
       {/* <ExpenseApp /> */}
-      <UseEffectApp />
+      {/* <UseEffectApp /> */}
+      <AxiosApp />
     </div>
   );
 };
