@@ -9,7 +9,7 @@ import ExpandableComponent from "../components/ExpandableComponent";
 import MyForm from "./forms/MyForm";
 import Form from "./forms/Form";
 import ExpenseApp from "./expense-tracker/ExpenseApp";
-import ConnectBackendApp from "./ConnectBcakend/ConnectBackendApp";
+import UseEffectApp from "./UseEffect/UseEffectApp";
 
 const App = () => {
   let items = ["New York", "San Fransicso", "Tokyo", "London", "Paris"];
@@ -57,7 +57,7 @@ const App = () => {
       {/* <MyForm /> */}
       {/* <Form /> */}
       {/* <ExpenseApp /> */}
-      <ConnectBackendApp />
+      <UseEffectApp />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductList from "./ProductList";
 
-const ConnectBackendApp = () => {
+const UseEffectApp = () => {
   const [category, setCategory] = useState("");
 
   return (
@@ -19,4 +19,4 @@ const ConnectBackendApp = () => {
   );
 };
 
-export default ConnectBackendApp;
+export default UseEffectApp;
