@@ -1,22 +1,16 @@
 import { useEffect, useState } from "react";
 import apiClient, { CanceledError } from "./services/api-client";
+import userService, { User } from "./services/user-service";
 
-interface User {
-  id: number;
-  name: string;
-}
 const AxiosApp = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    const controller = new AbortController();
     setLoading(true);
-    apiClient
-      .get<User[]>("/users", {
-        signal: controller.signal,
-      })
+    const { request, cancel } = userService.getAllUsers();
+    request
       .then((res) => {
         setUsers(res.data);
         setLoading(false);
@@ -26,11 +20,7 @@ const AxiosApp = () => {
         setError(err.message);
         setLoading(false);
       });
-    // .finally(() => {
-    //   setLoading(false);
-    // });
-
-    return () => controller.abort();
+    return () => cancel();
   }, []);
 
   // Delete User
@@ -38,7 +28,7 @@ const AxiosApp = () => {
     const originalUsers = [...users];
     setUsers(users.filter((u) => u.id !== user.id));
 
-    apiClient.delete("/users/" + user.id).catch((err) => {
+    userService.deleteUser(user.id).catch((err) => {
       setError(err.message);
       setUsers(originalUsers);
     });
@@ -50,8 +40,8 @@ const AxiosApp = () => {
     const newUser = { id: 0, name: "Rana" };
     setUsers([newUser, ...users]);
 
-    apiClient
-      .post("/users", newUser)
+    userService
+      .createUser(newUser)
       .then((res) => setUsers([res.data, ...users]))
       .catch((err) => {
         setError(err.message);
@@ -65,7 +55,7 @@ const AxiosApp = () => {
     const updatedUser = { ...user, name: user.name + "!" };
     setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
 
-    apiClient.patch("/users/" + user.id, updatedUser).catch((err) => {
+    userService.updateUser(updatedUser).catch((err) => {
       setError(err.message);
       setUsers(originalUsers);
     });
